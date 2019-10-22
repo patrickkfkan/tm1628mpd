@@ -1,0 +1,11 @@
+[Unit]
+Description=tm1628mpd service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/tm1628mpd
+
+[Install]
+WantedBy=multi-user.target
+

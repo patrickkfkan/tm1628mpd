@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+from tm1628mpd.tm1628_mpd_service import TM1628MpdService
+
+host = "localhost"
+port = "6600"
+
+service = TM1628MpdService(host, port)
+service.start()
+

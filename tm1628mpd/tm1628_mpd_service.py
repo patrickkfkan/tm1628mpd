@@ -39,11 +39,11 @@ class TM1628MpdService():
 			clock = True
 			clientConnected = self.__checkAndConnectToMpd()
 			if clientConnected:
-                try:
-				    clientStatus = self._mpdclient.status()
-                except Exception as e:
-    				logger.error("Failed to obtain MPD status!", exc_info=True)
-                    clientStatus = None
+				try:
+					clientStatus = self._mpdclient.status()
+				except Exception as e:
+					logger.error("Failed to obtain MPD status!", exc_info=True)
+					clientStatus = None
 
 				if clientStatus is not None and "state" in clientStatus and clientStatus["state"] == "play" and "elapsed" in clientStatus:	# Show play time
 					currentPlayTime = float(clientStatus["elapsed"])

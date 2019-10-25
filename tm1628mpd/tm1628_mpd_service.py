@@ -74,6 +74,8 @@ class TM1628MpdService():
 					oldTime = currentTime
 					byteTime = struct.pack(b"bbbb", datetime.now().time().hour, datetime.now().time().minute, datetime.now().time().second, 1)
 					os_write(self._vfd_dev, byteTime)
+
+			time.sleep(0.2)
 	
 	def __configureVfd(self):
 		if (self._rlock.acquire()):

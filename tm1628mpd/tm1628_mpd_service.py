@@ -80,7 +80,7 @@ class TM1628MpdService():
 	def __configureVfd(self):
 		if (self._rlock.acquire()):
 			self._vfd.enableDisplay(True)
-			self._vfd.setBrightness(7)
+			self._vfd.setBrightness(4)
 			self._rlock.release()
 
 	def __checkAndConnectToMpd(self):
